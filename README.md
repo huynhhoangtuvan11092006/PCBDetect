@@ -79,7 +79,8 @@ Giao diện Streamlit trực quan hỗ trợ kỹ sư vận hành nhà xưởng:
 
 | 1. Đối Soát Song Song | 2. Bảng Phân Rã Khuyết Tật | 3. Đánh Giá QC (Human-in-the-Loop) |
 | :---: | :---: | :---: |
-| ![Ảnh Soi Lỗi](docs/figures/ui_demo_1.png) | ![Bảng Tọa Độ](docs/figures/ui_demo_2.png) | ![Form Phản Hồi](docs/figures/ui_demo_3.png) |
+| ![Ảnh Soi Lỗi](docs/figures/ui_demo_1.png?v=1) | ![Bảng Tọa Độ](docs/figures/ui_demo_2.png?v=1) | ![Form Phản Hồi](docs/figures/ui_demo_3.png?v=1) |
+
 
 * **Đối soát song song**: Hiển thị ảnh gốc cạnh ảnh AI khoanh vùng lỗi với màu sắc trực quan.
 * **Thẻ trạng thái**: Báo hiệu `PASS` / `FAIL`, đếm số lượng lỗi và đo latency thực tế.
