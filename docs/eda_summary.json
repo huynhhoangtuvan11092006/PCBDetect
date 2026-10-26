@@ -1,0 +1,59 @@
+{
+  "dataset_name": "DeepPCB",
+  "total_images": 1500,
+  "split_counts": {
+    "trainval": 1000,
+    "test": 500
+  },
+  "total_defects": 10013,
+  "class_distribution": {
+    "mousebite": 1965,
+    "open": 1942,
+    "spur": 1625,
+    "short": 1506,
+    "pin_hole": 1501,
+    "copper": 1474
+  },
+  "class_distribution_pct": {
+    "mousebite": 19.62,
+    "open": 19.39,
+    "spur": 16.23,
+    "short": 15.04,
+    "pin_hole": 14.99,
+    "copper": 14.72
+  },
+  "defects_per_image": {
+    "mean": 6.68,
+    "std": 1.81,
+    "min": 1,
+    "median": 7.0,
+    "max": 15
+  },
+  "bbox_dimensions": {
+    "width_mean": 38.93,
+    "width_median": 35.0,
+    "height_mean": 35.67,
+    "height_median": 33.0,
+    "area_mean_px2": 1425.64,
+    "area_median_px2": 1184.0,
+    "area_pct_of_image": 0.3481
+  },
+  "coco_size_categories_pct": {
+    "medium": 67.93,
+    "small": 32.0,
+    "large": 0.07
+  },
+  "groups": [
+    "group00041",
+    "group12000",
+    "group12100",
+    "group12300",
+    "group13000",
+    "group20085",
+    "group44000",
+    "group50600",
+    "group77000",
+    "group90100",
+    "group92000"
+  ]
+}

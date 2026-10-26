@@ -1,0 +1,122 @@
+{
+  "strategy": "per_class_dynamic_thresholding",
+  "factory_target_recall": 0.95,
+  "global_threshold": 0.02,
+  "per_class_thresholds": {
+    "open": {
+      "threshold": 0.02,
+      "achieved_recall": 0.9419,
+      "achieved_precision": 0.2986,
+      "achieved_f1": 0.4534
+    },
+    "short": {
+      "threshold": 0.02,
+      "achieved_recall": 0.8655,
+      "achieved_precision": 0.1001,
+      "achieved_f1": 0.1795
+    },
+    "mousebite": {
+      "threshold": 0.07999999999999999,
+      "achieved_recall": 0.9545,
+      "achieved_precision": 0.5081,
+      "achieved_f1": 0.6632
+    },
+    "spur": {
+      "threshold": 0.02,
+      "achieved_recall": 0.9604,
+      "achieved_precision": 0.3273,
+      "achieved_f1": 0.4882
+    },
+    "copper": {
+      "threshold": 0.03,
+      "achieved_recall": 0.9559,
+      "achieved_precision": 0.5047,
+      "achieved_f1": 0.6606
+    },
+    "pin_hole": {
+      "threshold": 0.35,
+      "achieved_recall": 0.952,
+      "achieved_precision": 0.7649,
+      "achieved_f1": 0.8482
+    }
+  },
+  "operating_summary": {
+    "open": {
+      "class_name": "open",
+      "target_recall": 0.95,
+      "selected_threshold": 0.02,
+      "achieved_recall": 0.9419354838709677,
+      "achieved_precision": 0.2985685071574642,
+      "achieved_f1": 0.453416149068323,
+      "tp": 292,
+      "fp": 686,
+      "fn": 18
+    },
+    "short": {
+      "class_name": "short",
+      "target_recall": 0.95,
+      "selected_threshold": 0.02,
+      "achieved_recall": 0.865546218487395,
+      "achieved_precision": 0.10014584346135148,
+      "achieved_f1": 0.17952069716775598,
+      "tp": 206,
+      "fp": 1851,
+      "fn": 32
+    },
+    "mousebite": {
+      "class_name": "mousebite",
+      "target_recall": 0.95,
+      "selected_threshold": 0.07999999999999999,
+      "achieved_recall": 0.9545454545454546,
+      "achieved_precision": 0.5080645161290323,
+      "achieved_f1": 0.6631578947368421,
+      "tp": 252,
+      "fp": 244,
+      "fn": 12
+    },
+    "spur": {
+      "class_name": "spur",
+      "target_recall": 0.95,
+      "selected_threshold": 0.02,
+      "achieved_recall": 0.960352422907489,
+      "achieved_precision": 0.32732732732732733,
+      "achieved_f1": 0.4882418812989922,
+      "tp": 218,
+      "fp": 448,
+      "fn": 9
+    },
+    "copper": {
+      "class_name": "copper",
+      "target_recall": 0.95,
+      "selected_threshold": 0.03,
+      "achieved_recall": 0.9559471365638766,
+      "achieved_precision": 0.5046511627906977,
+      "achieved_f1": 0.6605783866057838,
+      "tp": 217,
+      "fp": 213,
+      "fn": 10
+    },
+    "pin_hole": {
+      "class_name": "pin_hole",
+      "target_recall": 0.95,
+      "selected_threshold": 0.35,
+      "achieved_recall": 0.9519650655021834,
+      "achieved_precision": 0.7649122807017544,
+      "achieved_f1": 0.8482490272373541,
+      "tp": 218,
+      "fp": 67,
+      "fn": 11
+    },
+    "ALL": {
+      "class_name": "ALL",
+      "target_recall": 0.95,
+      "selected_threshold": 0.02,
+      "achieved_recall": 0.9491638795986622,
+      "achieved_precision": 0.2267497603068073,
+      "achieved_f1": 0.3660518508964272,
+      "tp": 1419,
+      "fp": 4839,
+      "fn": 76
+    }
+  }
+}

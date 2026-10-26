@@ -1,0 +1,43 @@
+{
+  "benchmark_milestone": "Milestone 2 (Classical Baseline vs Deep Baseline)",
+  "test_dataset_size": 234,
+  "classical_baseline": {
+    "model_name": "Classical OpenCV Baseline (Template Diff)",
+    "num_test_samples": 234,
+    "total_ground_truth_defects": 1495,
+    "true_positives": 257,
+    "false_positives": 3632,
+    "false_negatives": 1238,
+    "precision": 6.61,
+    "recall": 17.19,
+    "f1_score": 9.55,
+    "avg_latency_ms": 2.32,
+    "throughput_fps": 430.6,
+    "class_recalls_pct": {
+      "open": 12.26,
+      "mousebite": 4.92,
+      "pin_hole": 17.9,
+      "copper": 54.63,
+      "spur": 3.96,
+      "short": 13.45
+    }
+  },
+  "yolo_baseline": {
+    "model_name": "YOLOv8 Nano (yolov8n_baseline.pt)",
+    "mAP50": 61.48,
+    "mAP50_95": 31.94,
+    "precision": 58.22,
+    "recall": 63.28,
+    "f1_score": 60.65,
+    "avg_latency_ms": 49.71,
+    "throughput_fps": 20.1,
+    "class_recalls_pct": {
+      "open": 52.14,
+      "short": 41.18,
+      "mousebite": 78.03,
+      "spur": 52.86,
+      "copper": 77.0,
+      "pin_hole": 78.46
+    }
+  }
+}

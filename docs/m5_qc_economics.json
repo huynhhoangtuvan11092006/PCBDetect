@@ -1,0 +1,76 @@
+{
+  "factory_parameters": {
+    "daily_volume": 10000,
+    "defect_rate": 0.03,
+    "reinspect_seconds_per_board": 45.0,
+    "shift_hours": 8.0,
+    "seconds_per_shift": 28800.0,
+    "operator_daily_cost_usd": 120.0,
+    "cost_per_escape_fn_usd": 500.0,
+    "cost_per_reinspect_usd": 1.5,
+    "working_days_per_month": 22
+  },
+  "strategies_comparison": [
+    {
+      "name": "100% Manual Inspection",
+      "threshold_description": "No AI - All 10,000 boards reviewed by human operators",
+      "achieved_recall": 0.9,
+      "achieved_precision": 0.98,
+      "escaped_defects_per_day": 29.999999999999993,
+      "false_alarms_per_day": 0.0,
+      "total_reinspect_queue_per_day": 10000,
+      "qc_operators_required": 16,
+      "daily_escape_cost_usd": 14999.999999999996,
+      "daily_labor_cost_usd": 1920.0,
+      "daily_total_cost_usd": 16919.999999999996,
+      "monthly_total_cost_usd": 372239.99999999994,
+      "monthly_savings_vs_manual_usd": 0.0
+    },
+    {
+      "name": "Uncalibrated AI (Default conf=0.25)",
+      "threshold_description": "Generic default threshold without SLA tuning",
+      "achieved_recall": 0.7629,
+      "achieved_precision": 0.7871,
+      "escaped_defects_per_day": 71.1,
+      "false_alarms_per_day": 61.9,
+      "total_reinspect_queue_per_day": 290.8,
+      "qc_operators_required": 1,
+      "daily_escape_cost_usd": 35565.0,
+      "daily_labor_cost_usd": 120.0,
+      "daily_total_cost_usd": 35685.0,
+      "monthly_total_cost_usd": 785070.0,
+      "monthly_savings_vs_manual_usd": -412830.0
+    },
+    {
+      "name": "Global High-Recall SLA (Tuned conf)",
+      "threshold_description": "Single global threshold (0.02) for Recall >= 95%",
+      "achieved_recall": 0.9491638795986622,
+      "achieved_precision": 0.2267497603068073,
+      "escaped_defects_per_day": 15.3,
+      "false_alarms_per_day": 971.0,
+      "total_reinspect_queue_per_day": 1255.8,
+      "qc_operators_required": 2,
+      "daily_escape_cost_usd": 7625.42,
+      "daily_labor_cost_usd": 240.0,
+      "daily_total_cost_usd": 7865.42,
+      "monthly_total_cost_usd": 173039.2,
+      "monthly_savings_vs_manual_usd": 199200.8
+    },
+    {
+      "name": "Production Optimized (Per-Class Dynamic)",
+      "threshold_description": "Dynamic per-class thresholds balancing sensitivity and overkill",
+      "achieved_recall": 0.958,
+      "achieved_precision": 0.682,
+      "escaped_defects_per_day": 12.6,
+      "false_alarms_per_day": 134.0,
+      "total_reinspect_queue_per_day": 421.4,
+      "qc_operators_required": 1,
+      "daily_escape_cost_usd": 6300.0,
+      "daily_labor_cost_usd": 120.0,
+      "daily_total_cost_usd": 6420.0,
+      "monthly_total_cost_usd": 141240.0,
+      "monthly_savings_vs_manual_usd": 231000.0
+    }
+  ],
+  "key_economic_takeaway": "Production Per-Class Dynamic Thresholding saves $231,000.00 per month compared to 100% manual review, while reducing required QC operators from 16 down to 1."
+}

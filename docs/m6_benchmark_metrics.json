@@ -1,0 +1,54 @@
+[
+  {
+    "variant_name": "PyTorch FP32 (Baseline)",
+    "runtime_engine": "PyTorch C++ Backend",
+    "precision": "FP32",
+    "model_size_mb": 6.2,
+    "latency_mean_ms": 86.75,
+    "latency_p50_ms": 84.55,
+    "latency_p95_ms": 96.6,
+    "latency_std_ms": 15.81,
+    "throughput_fps": 11.5,
+    "peak_ram_mb": 288.3,
+    "test_map50": 0.8184
+  },
+  {
+    "variant_name": "ONNX FP32 (Optimized Graph)",
+    "runtime_engine": "ONNX Runtime CPU",
+    "precision": "FP32",
+    "model_size_mb": 12.19,
+    "latency_mean_ms": 55.13,
+    "latency_p50_ms": 56.09,
+    "latency_p95_ms": 59.41,
+    "latency_std_ms": 8.15,
+    "throughput_fps": 18.1,
+    "peak_ram_mb": 358.6,
+    "test_map50": 0.8184
+  },
+  {
+    "variant_name": "ONNX FP16 (Half Precision)",
+    "runtime_engine": "ONNX Runtime CPU",
+    "precision": "FP16",
+    "model_size_mb": 6.13,
+    "latency_mean_ms": 52.14,
+    "latency_p50_ms": 53.38,
+    "latency_p95_ms": 55.97,
+    "latency_std_ms": 7.5,
+    "throughput_fps": 19.2,
+    "peak_ram_mb": 394.3,
+    "test_map50": 0.8184
+  },
+  {
+    "variant_name": "ONNX INT8 (Quantized)",
+    "runtime_engine": "ONNX Runtime CPU",
+    "precision": "INT8",
+    "model_size_mb": 3.32,
+    "latency_mean_ms": 80.77,
+    "latency_p50_ms": 80.32,
+    "latency_p95_ms": 91.67,
+    "latency_std_ms": 6.34,
+    "throughput_fps": 12.4,
+    "peak_ram_mb": 369.7,
+    "test_map50": 0.8061
+  }
+]

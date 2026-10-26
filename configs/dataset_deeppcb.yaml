@@ -1,0 +1,39 @@
+# Dataset Configuration for DeepPCB
+dataset_name: "DeepPCB"
+description: "Paired defect-free template and tested PCB images with 6 defect categories"
+
+paths:
+  raw_dir: "data/raw/DeepPCB/PCBData"
+  processed_dir: "data/processed"
+  trainval_split: "data/raw/DeepPCB/PCBData/trainval.txt"
+  test_split: "data/raw/DeepPCB/PCBData/test.txt"
+
+image:
+  width: 640
+  height: 640
+  channels: 3
+  format: "jpg"
+  resolution_dpi: 1200 # approximately 48 pixels/mm
+
+classes:
+  count: 6
+  names:
+    - "open"
+    - "short"
+    - "mousebite"
+    - "spur"
+    - "copper"
+    - "pin_hole"
+  id_mapping:
+    1: "open"
+    2: "short"
+    3: "mousebite"
+    4: "spur"
+    5: "copper"
+    6: "pin_hole"
+
+splits:
+  default_trainval_pairs: 1000
+  default_test_pairs: 500
+  total_pairs: 1500
+  leakage_policy: "Group-wise disjoint validation (split by board layout, never leak sub-images from same board)"

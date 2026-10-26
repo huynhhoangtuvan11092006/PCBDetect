@@ -1,0 +1,1 @@
+"""PCBDetect UI module."""

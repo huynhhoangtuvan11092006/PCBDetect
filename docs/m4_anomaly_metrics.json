@@ -1,0 +1,13 @@
+{
+  "model_name": "PaDiM (ResNet-18)",
+  "backbone": "ResNet-18",
+  "padim_image_level_auroc": 0.4767,
+  "padim_pixel_level_auroc": 0.8019,
+  "template_diff_image_level_auroc": 1.0000,
+  "avg_latency_ms": 111.39,
+  "throughput_fps": 9.0,
+  "model_size_mb": 157.82,
+  "num_normal_test_evaluated": 100,
+  "num_anomalous_test_evaluated": 100,
+  "saved_heatmaps_dir": "docs\\figures\\anomaly"
+}
