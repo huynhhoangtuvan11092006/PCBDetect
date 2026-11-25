@@ -1,11 +1,11 @@
 # Model Card: PCBDetect YOLOv8-Advanced (ONNX FP16)
 
 ## 1. Thông Tin Chung (Model Details)
-* **Tên mô hình**: PCBDetect-YOLOv8-Advanced
-* **Phiên bản**: v1.0.0 (Production Release)
-* **Kiến trúc cốt lõi**: YOLOv8 CSPDarknet Backbone + PAN-FPN Neck + Decoupled Head
+* **Tên mô hình**: PCBDetect-YOLOv8s-Champion
+* **Phiên bản**: v2.0.0 (Production Champion Release)
+* **Kiến trúc cốt lõi**: YOLOv8s CSPDarknet Backbone (11.2M tham số) + PAN-FPN Neck + Decoupled Head
 * **Định dạng tối ưu**: ONNX Runtime Half-Precision (`FP16`) qua `onnxslim`
-* **Dung lượng**: **6.13 MB** (đã nén 50% so với FP32 12.19 MB)
+* **Dung lượng**: **22.4 MB** (ONNX FP16)
 * **Tác giả & Đơn vị**: Nhóm Kỹ sư AI / AOI Inspection Team
 * **Giấy phép**: MIT License
 
@@ -30,20 +30,28 @@
   * Tập huấn luyện (Train): 1,061 ảnh.
   * Tập thẩm định (Val): 205 ảnh.
   * Tập kiểm thử độc lập (Test): 234 ảnh (các nhóm bo mạch trong tập test hoàn toàn chưa từng xuất hiện trong tập train).
-* **Kỹ thuật tăng cường (Data Augmentations)**: Lật ngang/dọc, xoay ngẫu nhiên $90^\circ$, điều chỉnh độ tương phản nhẹ, cắt ô trượt (tiling).
+* **Kỹ thuật tăng cường (Data Augmentations)**: Lật ngang/dọc, xoay ngẫu nhiên $90^\circ$, điều chỉnh độ tương phản nhẹ, mosaic augmentation với close_mosaic ở các epoch cuối.
 
 ---
 
-## 4. Ngưỡng Vận Hành Công Nghiệp & Chỉ Số Đo Kiểm (Metrics)
-* **Chiến lược ngưỡng**: Ngưỡng động riêng cho từng lớp (Per-Class Operating Point) nhằm ưu tiên độ nhạy **Recall $\ge 95\%$** cho bài toán nhà máy:
-  * `open`: threshold = 0.02 (Recall: 94.2%)
-  * `short`: threshold = 0.02 (Recall: 86.6%)
-  * `mousebite`: threshold = 0.08 (Recall: 95.5%)
-  * `spur`: threshold = 0.02 (Recall: 96.0%)
-  * `copper`: threshold = 0.03 (Recall: 95.6%)
-  * `pin_hole`: threshold = 0.35 (Recall: 95.2%, Precision: 76.5% - triệt tiêu 85% báo ảo)
-* **Tổng thể**: Recall đạt **95.8%**, mAP@0.5 đạt **0.8184**.
-* **Độ trễ suy luận**: Latency p50: **53.38 ms**, Latency p95: **55.97 ms**, Throughput: **19.2 FPS**.
+## 4. Bảng Kết Quả Đo Kiểm Chi Tiết (Test Set 234 Bo Mạch)
+* **Chỉ số toàn hệ thống**:
+  * **mAP@0.5**: **96.37%** (0.9637)
+  * **mAP@0.5:0.95**: **62.70%** (0.6270)
+  * **Precision**: **94.26%**
+  * **Recall**: **91.42%**
+  * **F1-Score**: **92.81%**
+
+* **Chi tiết từng lớp khuyết tật (Per-Class Performance)**:
+  | Loại Khuyết Tật | Precision | Recall | F1-Score | mAP@0.5 | mAP@0.5:0.95 |
+  | :--- | :---: | :---: | :---: | :---: | :---: |
+  | **`open` (Hở mạch)** | 91.72% | 94.19% | 92.94% | 97.03% | 56.50% |
+  | **`short` (Chập mạch)** | 94.88% | 70.06% | 80.60% | 86.27% | 52.30% |
+  | **`mousebite` (Khuyết mép)**| 96.63% | 97.64% | 97.13% | 98.64% | 59.50% |
+  | **`spur` (Gai đồng)** | 98.87% | 94.27% | 96.52% | 98.82% | 62.40% |
+  | **`copper` (Đồng thừa)** | 97.25% | 93.63% | 95.41% | 98.41% | 73.60% |
+  | **`pin_hole` (Lỗ kim)** | 86.19% | 98.69% | 92.02% | 99.03% | 71.90% |
+  | **TOÀN HỆ THỐNG** | **94.26%** | **91.42%** | **92.81%** | **96.37%** | **62.70%** |
 
 ---
 

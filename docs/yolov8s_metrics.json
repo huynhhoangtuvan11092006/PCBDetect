@@ -1,0 +1,58 @@
+{
+  "model_architecture": "YOLOv8s (Champion, 11.2M parameters)",
+  "epochs": 50,
+  "device": "NVIDIA T4 GPU",
+  "overall_metrics": {
+    "mAP_50": 0.9637,
+    "mAP_50_95": 0.6270,
+    "precision": 0.9426,
+    "recall": 0.9142,
+    "f1_score": 0.9281
+  },
+  "per_class_metrics": {
+    "open": {
+      "precision": 0.9172,
+      "recall": 0.9419,
+      "f1_score": 0.9294,
+      "mAP_50": 0.9703,
+      "mAP_50_95": 0.5650
+    },
+    "short": {
+      "precision": 0.9488,
+      "recall": 0.7006,
+      "f1_score": 0.8060,
+      "mAP_50": 0.8627,
+      "mAP_50_95": 0.5230
+    },
+    "mousebite": {
+      "precision": 0.9663,
+      "recall": 0.9764,
+      "f1_score": 0.9713,
+      "mAP_50": 0.9864,
+      "mAP_50_95": 0.5950
+    },
+    "spur": {
+      "precision": 0.9887,
+      "recall": 0.9427,
+      "f1_score": 0.9652,
+      "mAP_50": 0.9882,
+      "mAP_50_95": 0.6240
+    },
+    "copper": {
+      "precision": 0.9725,
+      "recall": 0.9363,
+      "f1_score": 0.9541,
+      "mAP_50": 0.9841,
+      "mAP_50_95": 0.7360
+    },
+    "pin_hole": {
+      "precision": 0.8619,
+      "recall": 0.9869,
+      "f1_score": 0.9202,
+      "mAP_50": 0.9903,
+      "mAP_50_95": 0.7190
+    }
+  },
+  "weights_path": "models/yolov8_advanced.pt",
+  "onnx_path": "models/yolov8_advanced_fp16.onnx"
+}
